@@ -1,0 +1,64 @@
+﻿<Window x:Class="DavuxLib2.Windows.ProductKeyWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Software Activation"
+             Height="322" Width="483">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#3399FF" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Foreground" Value="#0066CC" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <Border VerticalAlignment="Bottom" DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" BorderBrush="#DFDFDF">
+                <Grid Height="36" Background="#F0F0F0">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Left"
+                                   Margin="24, 0, 0, 0"
+                                   VerticalAlignment="Center">
+                            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="http://www.daveamenta.com">Help and Support</Hyperlink>
+                        </TextBlock>
+                        <Button Name="btnActivate" Click="btnActivate_Click" Height="22" Width="65" Margin="8,0,24,0" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Activate" />
+                    </DockPanel>
+                </Grid>
+            </Border>
+
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock Name="lblWelcome" Text="Welcome"
+                           FontSize="16" DockPanel.Dock="Top"
+                           FontFamily="Segoe UI, Verdana"
+                           Foreground="#003399"
+                           Padding="24,8,0,8" />
+            </DockPanel>
+            
+
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" Margin="10">In order to use this software, you must first activate it online.  To activate, enter your product key below.</TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <RadioButton Name="rTrial" Margin="10">
+                            <TextBlock>Evaluate this software free, for 30 days.</TextBlock>
+                    </RadioButton>
+                    <RadioButton Name="rKey" Margin="10">
+                        <TextBlock>I have a product key, activate the software now.</TextBlock>
+                    </RadioButton>
+                    <StackPanel IsEnabled="{Binding ElementName=rKey,Path=IsChecked}" Margin="10" Orientation="Horizontal">
+                        <TextBlock Margin="20,0,0,0" VerticalAlignment="Center">Product Key:</TextBlock>
+                        <TextBox Text="{Binding Path=Key}" Margin="5" Width="200" />
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+            
+        </DockPanel>
+
+    </Grid>
+</Window>
+
+
