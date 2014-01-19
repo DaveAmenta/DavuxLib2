@@ -104,7 +104,7 @@ namespace DavuxLib2.Extensions
             byte[] cipherText = transform.TransformFinalBlock(plainText, 0, plainText.Length);
 
             return cipherText;
-
+            /*
             // Decrypt the bytes to a string.
             transform = myRijndael.CreateDecryptor();
             plainText = transform.TransformFinalBlock(cipherText, 0, cipherText.Length);
@@ -113,6 +113,7 @@ namespace DavuxLib2.Extensions
             string roundtrip = ascii.GetString(plainText);
 
             Console.WriteLine("Round Trip: {0}", roundtrip);
+            */
         }
 
         public static string Decrypt(this byte[] cipherText, string keyString)

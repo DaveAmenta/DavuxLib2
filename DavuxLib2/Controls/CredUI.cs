@@ -407,7 +407,6 @@ namespace DavuxLib2.Controls
 
                 default:
                     throw new ApplicationException("Credential confirmation failed.");
-                    break;
             }
         }
 
@@ -512,31 +511,24 @@ namespace DavuxLib2.Controls
 
                 case CREDUI.ReturnCodes.ERROR_NO_SUCH_LOGON_SESSION:
                     throw new ApplicationException("No such logon session.");
-                    break;
 
                 case CREDUI.ReturnCodes.ERROR_NOT_FOUND:
                     throw new ApplicationException("Not found.");
-                    break;
 
                 case CREDUI.ReturnCodes.ERROR_INVALID_ACCOUNT_NAME:
                     throw new ApplicationException("Invalid account name.");
-                    break;
 
                 case CREDUI.ReturnCodes.ERROR_INSUFFICIENT_BUFFER:
                     throw new ApplicationException("Insufficient buffer.");
-                    break;
 
                 case CREDUI.ReturnCodes.ERROR_INVALID_PARAMETER:
                     throw new ApplicationException("Invalid parameter.");
-                    break;
 
                 case CREDUI.ReturnCodes.ERROR_INVALID_FLAGS:
                     throw new ApplicationException("Invalid flags.");
-                    break;
 
                 default:
                     throw new ApplicationException("Unknown credential result encountered.");
-                    break;
             }
             return result;
         }

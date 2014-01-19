@@ -59,7 +59,7 @@ namespace DavuxLib2.HTTP
                 throw new ApplicationException("Already called Start");
             }
 
-            _tcpListener = new TcpListener(Port);
+            _tcpListener = new TcpListener(IPAddress.Any, Port);
             _tcpListener.Start();
 
             _listenThread = new Thread(ListenThreadEntry);

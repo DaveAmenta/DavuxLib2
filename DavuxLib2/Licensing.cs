@@ -144,7 +144,7 @@ namespace DavuxLib2
                                      else Trace.WriteLine("License Error T=DE");
                                      return LicenseValidity.Expired;
                                  }
-                                 catch (Exception ex)
+                                 catch (Exception)
                                  {
                                      Trace.WriteLine("License Error T=DF");
                                  }
@@ -186,7 +186,7 @@ namespace DavuxLib2
              {
                  return File.ReadAllBytes(LicenseFile).Decrypt(App.LicenseEncryptionKey);
              }
-             catch (Exception ex) { } // encrypted data mismatch error, can't do anything.
+             catch (Exception) { } // encrypted data mismatch error, can't do anything.
              return "";
          }
 
